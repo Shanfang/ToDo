@@ -6,7 +6,7 @@ import {TodoDataService} from './todo-data.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [TodoDataService]
+  providers: []
 })
 export class AppComponent {
 
@@ -26,15 +26,16 @@ export class AppComponent {
   onAddTodo(todo: Todo) {
     this.todoDataService.addTodo(todo);
   }
-
-  toggleTodoComplete(todo: Todo) {
+  // rename from toggleTodoComplete
+  onToggleTodoComplete(todo: Todo) {
     this.todoDataService.toggleTodoComplete(todo);
   }
 
-  removeTodo(todo: Todo) {
+  // rename from removeTodo
+  onRemoveTodo(todo: Todo) {
     this.todoDataService.deleteTodoById(todo.id);
   }
-
+  
   get todos() {
     return this.todoDataService.getAllTodos();
   }
