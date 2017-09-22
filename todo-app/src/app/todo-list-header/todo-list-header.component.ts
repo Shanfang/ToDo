@@ -7,11 +7,14 @@ import { Todo } from '../todo';
   styleUrls: ['./todo-list-header.component.css']
 })
 export class TodoListHeaderComponent {
-  newTodo = new Todo();
-  constructor() { }
+
+  newTodo: Todo = new Todo();
 
   @Output()
   add: EventEmitter<Todo> = new EventEmitter();
+
+  constructor() {
+  }
 
   addTodo() {
     this.add.emit(this.newTodo);
